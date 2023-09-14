@@ -1,15 +1,20 @@
-const form = {}
+document.getElementById("myform").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-function getValues(e) {
-  const elements = Array.prototype.slice.call(e.target.elements);
+  let imie = document.getElementById("imie").value;
+  let nazwisko = document.getElementById("nazwisko").value;
+  let klasa = document.getElementById("kl").value;
+  let stanowisko = document.getElementById("stan").value;
 
-  elements.forEach((el) => {
-    if (el.type !== "submit") {
-      form[el.name] = el.value;
-    }
-  });
+  let Dane = {
+    imie: imie,
+    nazwisko: nazwisko,
+    klasa: klasa,
+    stanowisko: stanowisko
+  };
 
-  localStorage.setItem('form', JSON.stringify(form));
-}  
-
-document.getElementById("myform").addEventListener("submit", getValues);
+  let DaneJSON = JSON.stringify(Dane);
+  sessionStorage.setItem("Dane", DaneJSON);
+  let Danes = sessionStorage.getItem("Dane");
+  console.log("Danes:", JSON.parse(Danes));
+});
