@@ -1,2 +1,2 @@
-# adam3d
-Witam w moim repozytorium, które jest przeznaczone na lekcję TAI
+# Web-Storage - session storage
+Korzystałem z wpisów na stackoverflow oraz przyokazji znalezionych stron
